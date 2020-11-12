@@ -22,7 +22,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
     /**
      * Field to keep track of the set of sports followed/done by a user
      */
-	private Set<Sport> sports = new HashSet<>();
+	private final Set<Sport> sports = new HashSet<>();
 
     /**
      * Builds a new {@link Sport2SocialNetworkUserImpl}.
