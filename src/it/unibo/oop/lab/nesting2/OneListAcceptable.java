@@ -15,7 +15,7 @@ public class OneListAcceptable<T> implements Acceptable<T> {
 	@Override
 	public Acceptor<T> acceptor() {
 		return new Acceptor<T>() {
-			/* [NOTE] Access the filed via enclosign istance */
+			/* [NOTE] Access the field via enclosing istance */
 			final Iterator<T> it = OneListAcceptable.this.list.iterator();
 			@Override
 			public void accept(T newElement) throws ElementNotAcceptedException {
