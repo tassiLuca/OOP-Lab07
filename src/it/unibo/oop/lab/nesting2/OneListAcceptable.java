@@ -15,12 +15,15 @@ public class OneListAcceptable<T> implements Acceptable<T> {
 	@Override
 	public Acceptor<T> acceptor() {
 		return new Acceptor<T>() {
-			/* [NOTE] Access the field via enclosing istance */
+			/* [NOTE] Access the field via enclosing istance. */
 			final Iterator<T> it = OneListAcceptable.this.list.iterator();
 			@Override
 			public void accept(T newElement) throws ElementNotAcceptedException {
-				if (!newElement.equals(it.next())) {
-					throw new Acceptor.ElementNotAcceptedException(newElement);
+				/* [NOTE] If the iterator has already pass through all the elements 
+				 * when tryes to extract the next one throw a NoSuchElement.
+				 */
+				if (!it.hasNext() || !newElement.equals(it.next())) {
+						throw new Acceptor.ElementNotAcceptedException(newElement);
 				}
 			}
 
