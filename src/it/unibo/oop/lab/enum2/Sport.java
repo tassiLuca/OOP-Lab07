@@ -8,11 +8,11 @@ package it.unibo.oop.lab.enum2;
  */
 public enum Sport {
 	
-	BASKET(5, "Basket", Place.INDOOR),
-	VOLLEY(6, "Volley", Place.INDOOR),
+	BASKET(5, "Basketball", Place.INDOOR),
+	VOLLEY(6, "Volleyball", Place.INDOOR),
 	TENNIS(1, "Tennis", Place.OUTDOOR),
 	BIKE(1, "Bike", Place.OUTDOOR),
-	F1(1, "F1", Place.OUTDOOR),
+	F1(1, "Formula 1", Place.OUTDOOR),
 	MOTOGP(1, "MotoGP", Place.OUTDOOR),
 	SOCCER(11, "Soccer", Place.OUTDOOR);
 
@@ -56,7 +56,7 @@ public enum Sport {
 	 * @return true in case the sport is practiced indoor.
 	 */
 	public boolean isIndoorSport() {
-		return this.place == Place.INDOOR;
+		return this.place.equals(Place.INDOOR);
 	}
 	
 	/**
