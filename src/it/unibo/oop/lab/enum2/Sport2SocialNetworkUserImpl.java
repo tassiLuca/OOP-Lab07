@@ -6,7 +6,6 @@ package it.unibo.oop.lab.enum2;
 import java.util.HashSet;
 import java.util.Set;
 
-import it.unibo.oop.lab.enum2.Sport;
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
 import it.unibo.oop.lab.socialnetwork.User;
 
