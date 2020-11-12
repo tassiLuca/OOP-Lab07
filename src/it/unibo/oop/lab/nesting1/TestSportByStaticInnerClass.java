@@ -6,10 +6,6 @@ import it.unibo.oop.lab.socialnetwork.User;
  * This is going to act as a test for
  * {@link it.unibo.oop.lab.nesting1.SportSocialNetworkUserImpl}
  * 
- * 1) Complete the test as per comments below
- * 
- * 2) Run it: every test must return true.
- * 
  */
 public final class TestSportByStaticInnerClass {
 
@@ -20,29 +16,22 @@ public final class TestSportByStaticInnerClass {
      *            ignored
      */
     public static void main(final String... args) {
+        final SportSocialNetworkUserImpl<User> dcassani = 
+    			new SportSocialNetworkUserImpl<>("Davide", "Cassani", "dcassani", 53);
+        final SportSocialNetworkUserImpl<User> becclestone = 
+        		new SportSocialNetworkUserImpl<>("Bernie", "Ecclestone", "becclestone", 83);
+        final SportSocialNetworkUserImpl<User> falonso = 
+        		new SportSocialNetworkUserImpl<>("Fernando", "Alonso", "falonso", 34);
         /*
-         * TODO: create 3 sport social network users (SportSocialNetworkUser):
-         * 
-         * Davide Cassani , dcassani, 53
-         * 
-         * Bernie Ecclestone, becclestone, 83
-         * 
-         * Fernando Alonso, falonso, 34
-         */
-        final SportSocialNetworkUserImpl<User> dcassani = null;
-        final SportSocialNetworkUserImpl<User> becclestone = null;
-        final SportSocialNetworkUserImpl<User> falonso = null;
-
-        /*
-         * TODO: alonso is a fan of soccer and bike and practices F1: 
-         * add these sports to Alonso
-         * 
-         * falonso.addSport(SportSocialNetworkUserImpl.F1);
-         * 
-         * ...
-         */
-        System.out.println("Alonso practices F1: " + falonso.hasSport(SportSocialNetworkUserImpl.F1));
-        System.out.println("Alonso does not like volley: " + !falonso.hasSport(SportSocialNetworkUserImpl.VOLLEY));
+         * Alonso is a fan of soccer and bike and practices F1.
+         */        
+        falonso.addSport(SportSocialNetworkUserImpl.SOCCER);
+        falonso.addSport(SportSocialNetworkUserImpl.BIKE);
+        falonso.addSport(SportSocialNetworkUserImpl.F1);    
+        System.out.println("Alonso practices F1: " 
+        		+ falonso.hasSport(SportSocialNetworkUserImpl.F1));
+        System.out.println("Alonso does not like volley: " 
+        		+ !falonso.hasSport(SportSocialNetworkUserImpl.VOLLEY));
         /*
          * Cassani practiced bike and loves F1 and MotoGP
          */
@@ -51,8 +40,9 @@ public final class TestSportByStaticInnerClass {
         dcassani.addSport(SportSocialNetworkUserImpl.MOTOGP);
         System.out.println("Cassani has been a professional biker: "
                 + dcassani.hasSport(SportSocialNetworkUserImpl.BIKE));
-        System.out.println("Cassani does not like soccer: " + !dcassani.hasSport(SportSocialNetworkUserImpl.SOCCER));
-        /**
+        System.out.println("Cassani does not like soccer: " 
+                + !dcassani.hasSport(SportSocialNetworkUserImpl.SOCCER));
+        /*
          * Ecclestone is the de-facto owner of F1 but also a fan of basket.
          */
         becclestone.addSport(SportSocialNetworkUserImpl.F1);
